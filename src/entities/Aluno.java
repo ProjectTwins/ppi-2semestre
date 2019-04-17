@@ -5,7 +5,7 @@ public class Aluno {
 	private int ra;
 	private String turma;
 	
-	Materias materias = new Materias();
+	Materias materias = new Materias(new double[12]);
 	
 	public Aluno(String nome, int ra, String turma) {
 		this.nome = nome;
