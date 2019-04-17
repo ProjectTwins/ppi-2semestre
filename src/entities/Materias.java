@@ -3,7 +3,13 @@ package entities;
 
 public class Materias {
 	
-	private double[] materias = new double[12];
+	
+	
+	public Materias(double[] materias) {
+		this.materias = materias;
+	}
+
+	private double[] materias;
 	
 	public double getNota(int pos) {
 		return materias[pos];
@@ -12,4 +18,6 @@ public class Materias {
 	public void setNota(int pos ,double valor) {
 		materias[pos] =  valor;
 	}
+	
+	
 }

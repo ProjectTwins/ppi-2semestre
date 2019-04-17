@@ -14,7 +14,7 @@ import model.AlunoDAO;
 public class AlunoDaoJDBC implements AlunoDAO {
 
 	private Connection conn;
-	Materias materias = new Materias();
+	Materias materias = new Materias(new double[12]);
 
 	public AlunoDaoJDBC(Connection conn) {
 		this.conn = conn;
@@ -63,7 +63,21 @@ public class AlunoDaoJDBC implements AlunoDAO {
 
 	@Override
 	public void deletarPeloRa(Integer ra) {
-		// TODO Auto-generated method stub
+		
+		PreparedStatement st = null;
+		
+		try {
+			st = conn.prepareStatement(
+					"DELETE * FROM tb_aluno " +
+					"WHERE ra = ?"
+					);
+			
+			st.setInt(1, ra);
+			
+		}
+		catch(SQLException e){
+			throw new DbException(e.getMessage());
+		}
 
 	}
 
@@ -84,7 +98,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 	}
 
 	@Override
-	public void inserirNota(double[] materia, Aluno obj) {
+	public void inserirNota(Materias materias, Integer ra) {
 		PreparedStatement st = null;
 
 		try {
@@ -105,7 +119,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 			st.setDouble(10, materias.getNota(9));
 			st.setDouble(11, materias.getNota(10));
 			st.setDouble(12, materias.getNota(11));
-			st.setInt(13, obj.getRa());
+			st.setInt(13, ra);
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
