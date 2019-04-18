@@ -1,54 +1,55 @@
 package entities;
 
-public class Aluno {
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private String nome;
-	private int ra;
+	private Integer ra;
 	private String turma;
-	
+
 	Materias materias = new Materias(new double[12]);
-	
-	public Aluno(String nome, int ra, String turma) {
+
+	public Aluno(String nome, Integer ra, String turma) {
 		this.nome = nome;
 		this.ra = ra;
 		this.turma = turma;
 	}
 
+	public Aluno() {
+
+	}
 
 	public String getNome() {
 		return nome;
 	}
 
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
-	public int getRa() {
+	public Integer getRa() {
 		return ra;
 	}
-
 
 	public void setRa(int ra) {
 		this.ra = ra;
 	}
 
-
 	public String getTurma() {
 		return turma;
 	}
-
 
 	public void setTurma(String turma) {
 		this.turma = turma;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", ra=" + ra + ", turma=" + turma + "]";
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -57,7 +58,6 @@ public class Aluno {
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -75,8 +75,5 @@ public class Aluno {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
 }

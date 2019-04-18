@@ -1,10 +1,14 @@
 
 package entities;
 
-public class Materias {
+import java.io.Serializable;
+
+public class Materias implements Serializable {
 	
 	
 	
+	private static final long serialVersionUID = 1L;
+
 	public Materias(double[] materias) {
 		this.materias = materias;
 	}
