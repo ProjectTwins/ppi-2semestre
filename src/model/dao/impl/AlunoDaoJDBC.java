@@ -95,8 +95,11 @@ public class AlunoDaoJDBC implements AlunoDAO {
 			st.setInt(1, ra);
 			rs = st.executeQuery();
 			if(rs.next()) {
-				Aluno obj = new Aluno();
-				return obj;
+				Aluno aluno = new Aluno();
+				aluno.setRa(rs.getInt("ra"));
+				aluno.setNome(rs.getString("nome"));
+				aluno.setTurma(rs.getString("turma"));
+				return aluno;
 			}
 			return null;
 		} catch (SQLException e) {
