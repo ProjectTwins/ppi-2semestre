@@ -10,7 +10,6 @@ public class Aluno implements Serializable {
 	private Integer ra;
 	private String turma;
 
-	Materias materias = new Materias(new double[12]);
 
 	public Aluno(String nome, Integer ra, String turma) {
 		this.nome = nome;

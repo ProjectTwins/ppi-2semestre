@@ -1,11 +1,9 @@
 package application;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import entities.Aluno;
-import model.AlunoDAO;
 import model.dao.DaoFactory;
 import model.dao.impl.AlunoDaoJDBC;
 
@@ -16,8 +14,12 @@ public class Program {
 
 		AlunoDaoJDBC alunoDaoJDBC = (AlunoDaoJDBC) DaoFactory.criarAluno();
 
-		Aluno aluno = alunoDaoJDBC.procurarPeloRa(4);
-		System.out.println(aluno);
+		
+		Aluno aluno = new Aluno("Juaquim", null, "3B");
+		alunoDaoJDBC.inserirAluno(aluno);
+		
+		
+	
 		
 		
 
