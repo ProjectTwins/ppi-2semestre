@@ -44,12 +44,12 @@ public class AlunoDaoJDBC implements AlunoDAO {
 
 
 			
-			for(int i = 1 ; i <= 11 ; i++){
+			for(int i = 1 ; i <= 12 ; i++){
 			 st2.setInt(i , 0);
 
          }
 			
-			st.setInt(13, 2);
+			st2.setInt(13, 2);
 
 			st.executeUpdate();
 			st2.executeUpdate();
