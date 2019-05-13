@@ -6,20 +6,19 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox prefHeight="277.0" prefWidth="610.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistroAlunoController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button mnemonicParsing="false" text="Registrar" />
-            <Button mnemonicParsing="false" text="Deletar" />
+          <Button fx:id="btRegistrar" mnemonicParsing="false" onAction="#onBtRegistrar" text="Registrar" />
+            <Button fx:id="btDeletar" mnemonicParsing="false" onAction="#onBtDeletar" text="Deletar" />
         </items>
       </ToolBar>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn prefWidth="89.0" text="RA" />
-          <TableColumn prefWidth="298.0" text="Nome" />
-            <TableColumn prefWidth="82.0" text="Turma" />
+          <TableColumn fx:id="colunaRa" prefWidth="89.0" text="RA" />
+          <TableColumn fx:id="colunaNome" prefWidth="298.0" text="Nome" />
+            <TableColumn fx:id="colunaTurma" prefWidth="82.0" text="Turma" />
         </columns>
       </TableView>
    </children>

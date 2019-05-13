@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import db.DB;
 import db.DbException;
 import entities.Aluno;
-import entities.Materias;
 import model.AlunoDAO;
 
 public class AlunoDaoJDBC implements AlunoDAO {
@@ -29,8 +30,6 @@ public class AlunoDaoJDBC implements AlunoDAO {
 		try {
 			st = conn.prepareStatement("INSERT INTO tb_aluno" + "(nome, turma) " + "VALUES" + "(? , ?)",
 					Statement.RETURN_GENERATED_KEYS);
-
-
 
 			st.setString(1, obj.getNome());
 
@@ -120,7 +119,6 @@ public class AlunoDaoJDBC implements AlunoDAO {
 					+ "( ra , portugues , matematica , biologia , fisica , quimica , filosofia , ingles , geografia , historia , sociologia , ed_fisica , artes) "
 					+ "VALUES (?, ? ,? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ");
 
-	
 			st.setInt(1, raAluno);
 			st.setDouble(2, notas[0]);
 			st.setDouble(3, notas[1]);
@@ -143,6 +141,30 @@ public class AlunoDaoJDBC implements AlunoDAO {
 			DB.closeStatement(st);
 		}
 
+	}
+
+	public List<Aluno> ProcurarTodos() {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement("SELECT * FROM tb_aluno ORDER BY nome");
+			rs = st.executeQuery();
+
+			List<Aluno> list = new ArrayList<>();
+			while (rs.next()) {
+				Aluno obj = new Aluno();
+				obj.setRa(rs.getInt("ra"));
+				obj.setNome(rs.getString("nome"));
+				obj.setTurma(rs.getString("turma"));
+				list.add(obj);
+			}
+			return list;
+		} catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+		}
 	}
 
 }
