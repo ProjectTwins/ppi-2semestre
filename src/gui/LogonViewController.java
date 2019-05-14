@@ -1,11 +1,12 @@
 package gui;
 
-
 import java.io.IOException;
 
-import application.Main;
+import entities.Aluno;
 import entities.Logon;
 import gui.util.Alerts;
+import gui.util.Utils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,10 +14,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class LogonViewController {
 
-	Alerts alert = new Alerts();
 
 	@FXML
 	private TextField login;
@@ -35,32 +37,40 @@ public class LogonViewController {
 		return senha.getText();
 	}
 
-	public synchronized void loadView(String path) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-			VBox newVbox = loader.load();
-
-			Scene mainScene = Main.getMainScene();
-			VBox mainVbox = (VBox) ((javafx.scene.control.ScrollPane) mainScene.getRoot()).getContent();
-
-			mainVbox.getChildren().clear();
-		} catch (IOException e) {
-			e.getMessage();
-		}
-	}
-
 	@FXML
-	public void onActionEntrar() {
+	public void onActionEntrar(ActionEvent event) {
 
 		Logon logon = new Logon(onActionLogin(), onActionSenha());
 
 		if (logon.Autenticação() == true) {
+			
+			
+			Aluno obj = new Aluno();
+			Stage parentStage = Utils.currenteStage(event);
+			parentStage.close();
+			criarRegistroAluno(obj,"/gui/RegistroAluno.fxml",parentStage);
 
-			loadView("/gui/RegistroAluno.fxml");
 		} else {
-			alert.showAlert("Falha na Autenticação", "", "Login ou Senha inválidos", AlertType.ERROR);
+			Alerts.showAlert("Falha na Autenticação", "", "Login ou Senha inválidos", AlertType.ERROR);
 		}
 
+	}
+
+	private void criarRegistroAluno(Aluno obj,String absName,Stage parentStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absName));
+			VBox newVBox = loader.load();
+
+			Stage newStage = new Stage();
+			newStage.setTitle("Registro dos Alunos");
+			newStage.setScene(new Scene(newVBox));
+			newStage.setResizable(true);
+			newStage.initOwner(parentStage);
+			newStage.initModality(Modality.WINDOW_MODAL);
+			newStage.show();
+		} catch (IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
 	}
 
 }
