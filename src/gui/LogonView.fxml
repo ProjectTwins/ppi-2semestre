@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="319.0" prefWidth="273.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane prefHeight="319.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LogonViewController">
    <children>
       <VBox layoutX="-23.0" layoutY="-153.0" prefHeight="200.0" prefWidth="100.0" />
-      <TextField layoutX="62.0" layoutY="101.0" />
-      <TextField layoutX="62.0" layoutY="160.0" />
+      <TextField fx:id="login" layoutX="62.0" layoutY="101.0" onAction="#onActionLogin" />
+      <TextField fx:id="senha" layoutX="62.0" layoutY="160.0" onAction="#onActionSenha" />
       <Label layoutX="118.0" layoutY="79.0" text="Login">
          <font>
             <Font name="Lato Black" size="17.0" />
@@ -23,7 +22,7 @@
             <Font name="Lato Black" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="106.0" layoutY="214.0" mnemonicParsing="false" text="Entrar">
+      <Button fx:id="entrar" layoutX="106.0" layoutY="214.0" mnemonicParsing="false" onAction="#onActionEntrar" text="Entrar">
          <font>
             <Font name="Lato Black" size="14.0" />
          </font>

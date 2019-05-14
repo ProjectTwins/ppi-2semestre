@@ -2,36 +2,39 @@ package entities;
 
 public class Logon {
 
-	private String login;
-	private Integer password;
+	private String login ;
+	private String senha ;
 	
 	
-	public Logon(String login, Integer password) {
+	public Logon(String login, String senha) {
+	
 		this.login = login;
-		this.password = password;
+		this.senha = senha;
 	}
-
+	
+	public Logon() {
+		
+	}
 
 	public String getLogin() {
 		return login;
 	}
 
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-
-	public Integer getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(Integer password) {
-		this.password = password;
+	public String getSenha() {
+		return senha;
 	}
 	
+	public boolean Autenticação() {
+		if((this.login.equals("adm")) && (this.senha.equals("adm"))) {
+			return true;
+		}
+		else
+			return false;
+	}
 	
-	
+	public void print() {
+		System.out.println(this.login + " " + this.senha);
+	}
 	
 }
