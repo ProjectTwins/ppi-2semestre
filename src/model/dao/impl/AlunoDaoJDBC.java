@@ -71,12 +71,17 @@ public class AlunoDaoJDBC implements AlunoDAO {
 	public void deletarPeloRa(Integer ra) {
 
 		PreparedStatement st = null;
+		PreparedStatement st2 = null;
 
 		try {
-			st = conn.prepareStatement("DELETE FROM tb_aluno " + "WHERE ra = ? ");
-
+			st = conn.prepareStatement("DELETE FROM tb_materias " + "WHERE ra = ? ");
+			st2 = conn.prepareStatement("DELETE FROM tb_aluno " + "WHERE ra = ? ");
+			
 			st.setInt(1, ra);
+			st2.setInt(1, ra);
+			
 			st.executeUpdate();
+			st2.executeUpdate();
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
