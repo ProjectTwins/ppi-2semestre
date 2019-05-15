@@ -1,6 +1,8 @@
 package gui;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import gui.util.Constraints;
@@ -15,6 +17,8 @@ import model.dao.DaoFactory;
 
 public class DeletarAlunoController implements Initializable {
 
+	private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
+	
 	@FXML
 	private TextField txtRa;
 
@@ -27,6 +31,7 @@ public class DeletarAlunoController implements Initializable {
 	public void onBtSalvar(ActionEvent e) {
 		DeletarAluno();
 		Utils.currenteStage(e).close();
+		notifyDataChangeListeners();
 	}
 
 	public void onBtCancelar(ActionEvent e) {
@@ -39,6 +44,16 @@ public class DeletarAlunoController implements Initializable {
 
 	public void initializeNode() {
 		Constraints.setTextFieldInteger(txtRa);
+	}
+	
+	public void inscreverDataChange(DataChangeListener listener) {
+		dataChangeListeners.add(listener);
+	}
+	
+	private void notifyDataChangeListeners() {
+		for(DataChangeListener listener : dataChangeListeners) {
+			listener.onDataChanged();
+		}
 	}
 
 	public void DeletarAluno() {

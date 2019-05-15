@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 import model.AlunoDAO;
 import model.dao.DaoFactory;
 
-public class RegistroAlunoController implements Initializable {
+public class RegistroAlunoController implements Initializable,DataChangeListener {
 
 	@FXML
 	private TableView<Aluno> tableView;
@@ -47,8 +47,18 @@ public class RegistroAlunoController implements Initializable {
 	private Button btDeletar;
 
 	@FXML
+	private Button btAtualizar;
+	
+	@FXML
 	private void onBtRegistrar(ActionEvent event) {
 		
+	}
+	
+	@FXML
+	private void onBtAtualizar(ActionEvent event) {
+		Aluno obj = new Aluno();
+		Stage parentStage = Utils.currenteStage(event);
+		JanelaAtualizar(obj, "/gui/AlunoAtualizar.fxml", parentStage);
 	}
 
 	@FXML
@@ -80,7 +90,8 @@ public class RegistroAlunoController implements Initializable {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
-			
+			DeletarAlunoController controller = loader.getController();
+			controller.inscreverDataChange(this);
 			
 			
 			Stage dialogStage = new Stage();
@@ -94,6 +105,32 @@ public class RegistroAlunoController implements Initializable {
 		catch(IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
+	}
+	
+	private void JanelaAtualizar(Aluno obj,String absoluteName,Stage parentStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+			Pane pane = loader.load();
+			AlunoAtualizar controller = loader.getController();
+			controller.inscreverDataChange(this);
+			
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Atualize um aluno");
+			dialogStage.setScene(new Scene(pane));
+			dialogStage.setResizable(false);
+			dialogStage.initOwner(parentStage);
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.showAndWait();
+		}
+		catch(IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
+	}
+
+	public void onDataChanged() {
+		iniciarColunas();
+		
 	}
 
 }

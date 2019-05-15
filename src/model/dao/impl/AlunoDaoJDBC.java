@@ -50,6 +50,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 	@Override
 	public void atualizarAluno(Aluno obj) {
 		PreparedStatement st = null;
+		
 		try {
 			st = conn.prepareStatement("UPDATE tb_aluno " + "SET nome = ?, turma = ? " + "WHERE ra = ? ");
 
