@@ -2,6 +2,7 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -28,6 +29,7 @@ import model.dao.DaoFactory;
 
 public class RegistroAlunoController implements Initializable,DataChangeListener {
 
+	
 	@FXML
 	private TableView<Aluno> tableView;
 
@@ -51,7 +53,10 @@ public class RegistroAlunoController implements Initializable,DataChangeListener
 	
 	@FXML
 	private void onBtRegistrar(ActionEvent event) {
-		
+		Aluno obj = new Aluno();
+		Stage parentStage = Utils.currenteStage(event);
+		JanelaRegistrar("/gui/RegistrarAluno.fxml", parentStage,obj);
+
 	}
 	
 	@FXML
@@ -125,6 +130,26 @@ public class RegistroAlunoController implements Initializable,DataChangeListener
 		}
 		catch(IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
+	}
+	
+	private void JanelaRegistrar(String absoluteName, Stage parentStage , Aluno obj) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+			Pane pane = loader.load();
+			RegistrarAlunoController controller = loader.getController();
+			controller.inscreverDataChange(this);
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Registrar um Aluno");
+			dialogStage.setScene(new Scene(pane));
+			dialogStage.setResizable(false);
+			dialogStage.initOwner(parentStage);
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.showAndWait();
+		} catch (IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+			e.printStackTrace();
 		}
 	}
 
