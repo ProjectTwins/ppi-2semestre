@@ -3,6 +3,7 @@ package model;
 import java.util.List;
 
 import entities.Aluno;
+import entities.Materias;
 
 public interface AlunoDAO {
 	public void inserirAluno(Aluno obj);
@@ -16,4 +17,6 @@ public interface AlunoDAO {
 	Aluno procurarPeloRa(Integer ra);
 	
 	List<Aluno> ProcurarTodos();
+	
+	List<Materias> ProcurarNota();
 }

@@ -11,11 +11,13 @@ import java.util.List;
 import db.DB;
 import db.DbException;
 import entities.Aluno;
+import entities.Materias;
 import model.AlunoDAO;
 
 public class AlunoDaoJDBC implements AlunoDAO {
 
 	private Connection conn;
+
 
 	public AlunoDaoJDBC(Connection conn) {
 		this.conn = conn;
@@ -162,6 +164,46 @@ public class AlunoDaoJDBC implements AlunoDAO {
 				obj.setRa(rs.getInt("ra"));
 				obj.setNome(rs.getString("nome"));
 				obj.setTurma(rs.getString("turma"));
+				list.add(obj);
+			}
+			return list;
+		} catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+		}
+	}
+
+	@Override
+	public List<Materias> ProcurarNota() {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement("SELECT * FROM " + 
+					"tb_aluno " + 
+					"INNER JOIN tb_materias " + 
+					"ON tb_aluno.ra=tb_materias.ra");
+			rs = st.executeQuery();
+
+			List<Materias> list = new ArrayList<>();
+			while (rs.next()) {
+				Materias obj = new Materias();
+				obj.setArtes(rs.getDouble("artes"));
+				obj.setBiologia(rs.getDouble("biologia"));
+				obj.setEdFisica(rs.getDouble("ed_fisica"));
+				obj.setFilosofia(rs.getDouble("filosofia"));
+				obj.setFisica(rs.getDouble("fisica"));
+				obj.setGeografia(rs.getDouble("geografia"));
+				obj.setHistoria(rs.getDouble("historia"));
+				obj.setIngles(rs.getDouble("ingles"));
+				obj.setMatematica(rs.getDouble("matematica"));
+				obj.setPortugues(rs.getDouble("portugues"));
+				obj.setQuimica(rs.getDouble("quimica"));
+				obj.setSociologia(rs.getDouble("sociologia"));
+				obj.setRa(rs.getInt("ra"));
+				obj.setRaMaterias(rs.getInt("raMaterias"));
+				
 				list.add(obj);
 			}
 			return list;
