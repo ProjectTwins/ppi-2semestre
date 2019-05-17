@@ -124,7 +124,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 		try {
 
 			st = conn.prepareStatement("INSERT INTO tb_materias "
-					+ "( ra , portugues , matematica , biologia , fisica , quimica , filosofia , ingles , geografia , historia , sociologia , ed_fisica , artes) "
+					+ "( ra , portugues , matematica , biologia , fisica , quimica , filosofia , ingles , geografia , historia , sociologia , edFisica , artes) "
 					+ "VALUES (?, ? ,? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ");
 
 			st.setInt(1, raAluno);
@@ -191,7 +191,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 				Materias obj = new Materias();
 				obj.setArtes(rs.getDouble("artes"));
 				obj.setBiologia(rs.getDouble("biologia"));
-				obj.setEdFisica(rs.getDouble("ed_fisica"));
+				obj.setEdFisica(rs.getDouble("edFisica"));
 				obj.setFilosofia(rs.getDouble("filosofia"));
 				obj.setFisica(rs.getDouble("fisica"));
 				obj.setGeografia(rs.getDouble("geografia"));

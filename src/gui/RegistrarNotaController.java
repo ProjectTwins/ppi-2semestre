@@ -1,9 +1,11 @@
 package gui;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import entities.Materias;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -99,19 +101,22 @@ public class RegistrarNotaController implements Initializable {
 		geografia.setCellValueFactory(new PropertyValueFactory<>("geografia"));
 		historia.setCellValueFactory(new PropertyValueFactory<>("historia"));
 		sociologia.setCellValueFactory(new PropertyValueFactory<>("sociologia"));
+		edFisica.setCellValueFactory(new PropertyValueFactory<>("edFisica"));
 		ra.setCellValueFactory(new PropertyValueFactory<>("ra"));
+		
+		tableView.setItems(listMaterias());
 	}
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle rb) {
 		iniciarColunas();
 	}
 	
 	private ObservableList<Materias> listMaterias(){
-		Materias materias = new Materias();
-		AlunoDAO criarMaterias = DaoFactory.criarAluno();
-		criarMaterias.ProcurarNota();
-		return null;
+		AlunoDAO alunoDao = DaoFactory.criarAluno();
+		List<Materias> list = alunoDao.ProcurarNota();
+		return FXCollections.observableArrayList(list);
+		
 	}
 	
 }

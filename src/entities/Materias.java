@@ -80,10 +80,85 @@ public class Materias {
 	public Materias() {
 		
 	}
+	
 
 	public Materias(Integer raMaterias) {
 		this.raMaterias = raMaterias;
 	}
+
+	public Materias(Integer raMaterias, Integer ra, Double matematica, Double portugues, Double geografia,
+			Double biologia, Double fisica, Double quimica, Double filosofia, Double ingles, Double historia,
+			Double sociologia, Double edFisica, Double artes) {
+		super();
+		this.raMaterias = raMaterias;
+		this.ra = ra;
+		this.matematica = matematica;
+		this.portugues = portugues;
+		this.geografia = geografia;
+		this.biologia = biologia;
+		this.fisica = fisica;
+		this.quimica = quimica;
+		this.filosofia = filosofia;
+		this.ingles = ingles;
+		this.historia = historia;
+		this.sociologia = sociologia;
+		this.edFisica = edFisica;
+		this.artes = artes;
+	}
+
+	public Integer getRa() {
+		return ra;
+	}
+
+	public Double getMatematica() {
+		return matematica;
+	}
+
+	public Double getPortugues() {
+		return portugues;
+	}
+
+	public Double getGeografia() {
+		return geografia;
+	}
+
+	public Double getBiologia() {
+		return biologia;
+	}
+
+	public Double getFisica() {
+		return fisica;
+	}
+
+	public Double getQuimica() {
+		return quimica;
+	}
+
+	public Double getFilosofia() {
+		return filosofia;
+	}
+
+	public Double getIngles() {
+		return ingles;
+	}
+
+	public Double getHistoria() {
+		return historia;
+	}
+
+	public Double getSociologia() {
+		return sociologia;
+	}
+
+	public Double getEdFisica() {
+		return edFisica;
+	}
+
+	public Double getArtes() {
+		return artes;
+	}
+	
+	
 	
 	
 	
