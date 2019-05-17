@@ -4,19 +4,32 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistroAlunoController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="btRegistrar" mnemonicParsing="false" onAction="#onBtRegistrar" text="Registrar" />
-            <Button fx:id="btDeletar" mnemonicParsing="false" onAction="#onBtDeletar" text="Deletar" />
-            <Button fx:id="btAtualizar" mnemonicParsing="false" onAction="#onBtAtualizar" text="Atualizar" />
-            <Button fx:id="btNotas" mnemonicParsing="false" onAction="#onBtNotas" text="Consultar Notas" />
+          <Button fx:id="btRegistrar" mnemonicParsing="false" onAction="#onBtRegistrar" text="Registrar">
+               <effect>
+                  <SepiaTone />
+               </effect></Button>
+            <Button fx:id="btDeletar" mnemonicParsing="false" onAction="#onBtDeletar" text="Deletar">
+               <effect>
+                  <SepiaTone />
+               </effect></Button>
+            <Button fx:id="btAtualizar" mnemonicParsing="false" onAction="#onBtAtualizar" text="Atualizar">
+               <effect>
+                  <SepiaTone />
+               </effect></Button>
+            <Button fx:id="btNotas" mnemonicParsing="false" onAction="#onBtNotas" text="Consultar Notas">
+               <effect>
+                  <SepiaTone />
+               </effect></Button>
         </items>
       </ToolBar>
-      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image:url(/background1/fundo_login3.jpg);">
         <columns>
           <TableColumn fx:id="colunaRa" prefWidth="89.0" text="RA" />
           <TableColumn fx:id="colunaNome" prefWidth="298.0" text="Nome" />
