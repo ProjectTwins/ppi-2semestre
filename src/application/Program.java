@@ -1,37 +1,30 @@
 package application;
 
-import java.util.Scanner;
-
-import entities.Aluno;
-import entities.Materias;
+import model.AlunoDAO;
 import model.dao.DaoFactory;
-import model.dao.impl.AlunoDaoJDBC;
 
 public class Program {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
-		AlunoDaoJDBC alunoDaoJDBC = (AlunoDaoJDBC) DaoFactory.criarAluno();
-
-		double[] notas = new double[12];
-
-		notas[0] = 4;
-		notas[1] = 3;
-		notas[2] = 6;
-		notas[3] = 7;
-		notas[4] = 8;
-		notas[5] = 9;
-		notas[6] = 10;
-		notas[7] = 3;
-		notas[8] = 2;
-		notas[9] = 1;
-		notas[10] = 0;
-		notas[11] = 4;
-
-		alunoDaoJDBC.inserirNota(notas , 1);
-
-		sc.close();
+		AlunoDAO dao = DaoFactory.criarAluno();
+		double vect[] = new double[12];
+		
+		vect[0]= 1;
+				vect[1]= 1;
+				vect[2]= 1;
+				vect[3]= 1;
+				vect[4]= 1;
+				vect[5]= 1;
+				vect[6]= 1;
+				vect[7]= 1;
+				vect[8]= 1;
+				vect[9]= 1;
+				vect[10]= 1;
+				vect[11]= 1;
+		
+		dao.inserirNota(vect, 4, 0);
+		
+		
 	}
 
 }

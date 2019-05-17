@@ -10,7 +10,7 @@ public interface AlunoDAO {
 
 	public void atualizarAluno(Aluno obj);
 
-	public void inserirNota(double[] notas, Integer raAluno);
+	public void inserirNota(double[] notas, Integer raAluno, Integer raMaterias);
 
 	public void deletarPeloRa(Integer ra);
 

@@ -118,14 +118,14 @@ public class AlunoDaoJDBC implements AlunoDAO {
 	}
 
 	@Override
-	public void inserirNota(double notas[], Integer raAluno) {
+	public void inserirNota(double notas[],Integer raAluno,Integer raMaterias) {
 		PreparedStatement st = null;
 
 		try {
 
 			st = conn.prepareStatement("INSERT INTO tb_materias "
-					+ "( ra , portugues , matematica , biologia , fisica , quimica , filosofia , ingles , geografia , historia , sociologia , edFisica , artes) "
-					+ "VALUES (?, ? ,? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) ");
+					+ "( ra , portugues , matematica , biologia , fisica , quimica , filosofia , ingles , geografia , historia , sociologia , edFisica , artes, raMaterias) "
+					+ "VALUES (?, ? ,? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?, ? ) ");
 
 			st.setInt(1, raAluno);
 			st.setDouble(2, notas[0]);
@@ -140,6 +140,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 			st.setDouble(11, notas[9]);
 			st.setDouble(12, notas[10]);
 			st.setDouble(13, notas[11]);
+			st.setInt(14, raMaterias);
 
 			st.executeUpdate();
 
