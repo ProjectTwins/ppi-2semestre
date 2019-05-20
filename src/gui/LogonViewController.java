@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import entities.Aluno;
 import entities.Logon;
+import entities.LogonAluno;
 import gui.util.Alerts;
 import gui.util.Utils;
 import javafx.event.ActionEvent;
@@ -19,13 +20,14 @@ import javafx.stage.Stage;
 
 public class LogonViewController {
 
-
 	@FXML
 	private TextField login;
 	@FXML
 	private TextField senha;
 	@FXML
 	private Button entrar;
+
+	public static int auxSenha;
 
 	@FXML
 	public String onActionLogin() {
@@ -35,28 +37,45 @@ public class LogonViewController {
 	@FXML
 	public String onActionSenha() {
 		return senha.getText();
+
 	}
 
 	@FXML
 	public void onActionEntrar(ActionEvent event) {
 
-		Logon logon = new Logon(onActionLogin(), onActionSenha());
+		if (login.getText().equals("adm")) {
+			Logon logon = new Logon(onActionLogin(), onActionSenha());
 
-		if (logon.Autenticação() == true) {
-			
-			
-			Aluno obj = new Aluno();
-			Stage parentStage = Utils.currenteStage(event);
-			parentStage.close();
-			criarRegistroAluno(obj,"/gui/RegistroAluno.fxml",parentStage);
+			if (logon.Autenticação() == true) {
 
+				Aluno obj = new Aluno();
+				Stage parentStage = Utils.currenteStage(event);
+				parentStage.close();
+				criarRegistroAluno(obj, "/gui/RegistroAluno.fxml", parentStage);
+
+			} else
+				Alerts.showAlert("Falha na Autenticação", "", "Login ou Senha inválidos", AlertType.ERROR);
 		} else {
-			Alerts.showAlert("Falha na Autenticação", "", "Login ou Senha inválidos", AlertType.ERROR);
+
+			auxSenha = Integer.parseInt(onActionSenha());
+			LogonAluno logonAluno = new LogonAluno(onActionLogin(), auxSenha);
+
+			if (logonAluno.Autenticacao() == true) {
+
+				Aluno obj = new Aluno();
+				Stage parentStage = Utils.currenteStage(event);
+				parentStage.close();
+				criarRegistroAluno(obj, "/gui/InformacaoAluno.fxml", parentStage);
+
+			} else {
+				Alerts.showAlert("Falha na Autenticação", "", "Login ou Senha inválidos", AlertType.ERROR);
+			}
+
 		}
 
 	}
 
-	private void criarRegistroAluno(Aluno obj,String absName,Stage parentStage) {
+	private void criarRegistroAluno(Aluno obj, String absName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absName));
 			VBox newVBox = loader.load();
