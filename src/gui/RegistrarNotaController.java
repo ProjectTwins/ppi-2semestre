@@ -98,8 +98,10 @@ public class RegistrarNotaController implements Initializable,DataChangeListener
 	}
 	
 	@FXML
-	public void onActionAtualizarNota() {
-		
+	public void onActionAtualizarNota(ActionEvent event) {
+		Materias obj = new Materias();
+		Stage parentStage = Utils.currenteStage(event);
+		JanelaAtualizarNota("/gui/AtualizarNotas.fxml", parentStage, obj);
 	}
 	
 	public void iniciarColunas() {
@@ -141,6 +143,26 @@ public class RegistrarNotaController implements Initializable,DataChangeListener
 			
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Insira as notas");
+			dialogStage.setScene(new Scene(pane));
+			dialogStage.setResizable(false);
+			dialogStage.initOwner(parentStage);
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.showAndWait();
+		}
+		catch(IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
+	}
+	private void JanelaAtualizarNota(String absoluteName,Stage parentStage,Materias obj) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+			Pane pane = loader.load();
+			AtualizarNotaController controller = loader.getController();
+			controller.inscreverDataChange(this);
+			
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Atualize as notas");
 			dialogStage.setScene(new Scene(pane));
 			dialogStage.setResizable(false);
 			dialogStage.initOwner(parentStage);

@@ -151,6 +151,36 @@ public class AlunoDaoJDBC implements AlunoDAO {
 		}
 
 	}
+	
+	public void atualizarNotas(double notas[],Integer raAluno) {
+		PreparedStatement st = null;
+		try {
+		st = conn.prepareStatement("update tb_materias "+
+				 "set portugues = ?, matematica = ?,biologia = ?, fisica = ?, quimica = ?, filosofia = ?, ingles = ?,geografia = ?,historia = ?, sociologia = ?,edFisica = ?, artes = ? " +
+				 "where ra = ? " );
+		
+		st.setDouble(1, notas[0]);
+		st.setDouble(2, notas[1]);
+		st.setDouble(3, notas[2]);
+		st.setDouble(4, notas[3]);
+		st.setDouble(5, notas[4]);
+		st.setDouble(6, notas[5]);
+		st.setDouble(7, notas[6]);
+		st.setDouble(8, notas[7]);
+		st.setDouble(9, notas[8]);
+		st.setDouble(10, notas[9]);
+		st.setDouble(11, notas[10]);
+		st.setDouble(12, notas[11]);
+		st.setInt(13, raAluno);
+		
+		st.executeUpdate();
+		
+		}catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeStatement(st);
+		}
+	}
 
 	public List<Aluno> ProcurarTodos() {
 		PreparedStatement st = null;
