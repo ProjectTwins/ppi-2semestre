@@ -246,4 +246,48 @@ public class AlunoDaoJDBC implements AlunoDAO {
 		}
 	}
 
+	@Override
+	public List<Materias> ProcurarNotaRa(Integer ra) {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			st = conn.prepareStatement("select * from tb_Materias where ra = ?" );
+			
+			st.setInt(1, ra);
+			
+			rs = st.executeQuery();
+			
+			List<Materias> list = new ArrayList<>();
+			while (rs.next()) {
+				Materias obj = new Materias();
+				obj.setArtes(rs.getDouble("artes"));
+				obj.setBiologia(rs.getDouble("biologia"));
+				obj.setEdFisica(rs.getDouble("edFisica"));
+				obj.setFilosofia(rs.getDouble("filosofia"));
+				obj.setFisica(rs.getDouble("fisica"));
+				obj.setGeografia(rs.getDouble("geografia"));
+				obj.setHistoria(rs.getDouble("historia"));
+				obj.setIngles(rs.getDouble("ingles"));
+				obj.setMatematica(rs.getDouble("matematica"));
+				obj.setPortugues(rs.getDouble("portugues"));
+				obj.setQuimica(rs.getDouble("quimica"));
+				obj.setSociologia(rs.getDouble("sociologia"));
+				obj.setRa(rs.getInt("ra"));
+				obj.setRaMaterias(rs.getInt("raMaterias"));
+				
+				list.add(obj);
+			}
+			return list;
+			
+			
+		}catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+		}
+		
+	}
+
 }

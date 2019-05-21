@@ -2,7 +2,6 @@ package entities;
 
 import model.AlunoDAO;
 import model.dao.DaoFactory;
-import model.dao.impl.AlunoDaoJDBC;
 
 public class LogonAluno {
 	
@@ -20,6 +19,9 @@ public class LogonAluno {
 		this.nome = nome;
 		this.senhaRa = senhaRa;
 	}
+	
+	public LogonAluno() {
+	}
 
 	public boolean Autenticacao() {
 		this.raAut = alunodao.procurarPeloRa(this.senhaRa).getRa();
@@ -31,5 +33,39 @@ public class LogonAluno {
 			return false;
 
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Integer getSenhaRa() {
+		return senhaRa;
+	}
+
+	public void setSenhaRa(Integer senhaRa) {
+		this.senhaRa = senhaRa;
+	}
+
+	public Integer getRaAut() {
+		return raAut;
+	}
+
+	public void setRaAut(Integer raAut) {
+		this.raAut = raAut;
+	}
+
+	public String getNomeAut() {
+		return nomeAut;
+	}
+
+	public void setNomeAut(String nomeAut) {
+		this.nomeAut = nomeAut;
+	}
+	
+	
 	
 }

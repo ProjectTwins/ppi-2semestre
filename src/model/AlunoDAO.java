@@ -21,4 +21,6 @@ public interface AlunoDAO {
 	List<Aluno> ProcurarTodos();
 	
 	List<Materias> ProcurarNota();
+	
+	List<Materias> ProcurarNotaRa(Integer ra);
 }

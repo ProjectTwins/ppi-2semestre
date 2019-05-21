@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InformacaoAlunoController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="800.0">
+        <items>
+          <Button fx:id="btTeste" mnemonicParsing="false" text="Teste Vocacional">
+               <font>
+                  <Font name="Lucida Console" size="12.0" />
+               </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
+        </items>
+      </ToolBar>
+      <TableView fx:id="tableView" prefHeight="77.0" prefWidth="800.0">
+        <columns>
+          <TableColumn fx:id="ra" prefWidth="53.0" text="ra" />
+          <TableColumn fx:id="portugues" prefWidth="65.0" text="portugues" />
+            <TableColumn fx:id="matematica" prefWidth="75.0" text="matemática" />
+            <TableColumn fx:id="biologia" prefWidth="60.0" text="biologia" />
+            <TableColumn fx:id="fisica" prefWidth="60.0" text="fisica" />
+            <TableColumn fx:id="quimica" prefWidth="60.0" text="quimica" />
+            <TableColumn fx:id="filosofia" prefWidth="60.0" text="filosofia" />
+            <TableColumn fx:id="ingles" prefWidth="60.0" text="ingles" />
+            <TableColumn fx:id="geografia" prefWidth="60.0" text="geografia" />
+            <TableColumn fx:id="historia" prefWidth="60.0" text="historia" />
+            <TableColumn fx:id="sociologia" prefWidth="65.0" text="sociologia" />
+            <TableColumn fx:id="edFisica" prefWidth="60.0" text="edFisica" />
+            <TableColumn fx:id="artes" prefWidth="60.0" text="artes" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="txtArea" editable="false" prefHeight="48.0" prefWidth="800.0" text="Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente&#10;se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria." />
+   </children>
+</VBox>
