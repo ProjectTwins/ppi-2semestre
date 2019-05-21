@@ -102,7 +102,7 @@ public class LogonViewController {
 			newStage.setScene(new Scene(newVBox));
 			newStage.setResizable(true);
 			newStage.initOwner(parentStage);
-			newStage.initModality(Modality.WINDOW_MODAL);
+ 			newStage.initModality(Modality.WINDOW_MODAL);
 			newStage.show();
 		} catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);

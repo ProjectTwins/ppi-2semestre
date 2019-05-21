@@ -13,7 +13,7 @@
    <children>
       <ToolBar prefHeight="40.0" prefWidth="800.0">
         <items>
-          <Button fx:id="btTeste" mnemonicParsing="false" text="Teste Vocacional">
+          <Button fx:id="btTeste" mnemonicParsing="false" onAction="#btTeste" text="Teste Vocacional">
                <font>
                   <Font name="Lucida Console" size="12.0" />
                </font>

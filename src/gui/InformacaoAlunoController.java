@@ -1,19 +1,29 @@
 package gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import entities.Materias;
+import gui.util.Alerts;
+import gui.util.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.AlunoDAO;
 import model.dao.DaoFactory;
 
@@ -72,6 +82,12 @@ public class InformacaoAlunoController implements Initializable {
 		iniciarColunas();
 
 	}
+	public void btTeste(ActionEvent event) {
+		Stage parentStage = Utils.currenteStage(event);
+		TesteVocacional("/gui/TesteVocacional.fxml", parentStage);
+		
+		
+	}
 
 	public void iniciarColunas() {
 		ra.setCellValueFactory(new PropertyValueFactory<>("ra"));
@@ -102,6 +118,22 @@ public class InformacaoAlunoController implements Initializable {
 	private void textArea() {
 		txtArea.setText("Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente\r\n" + 
 				"se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria.");
+	}
+	private void TesteVocacional(String absName, Stage parentStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absName));
+			VBox newVBox = loader.load();
+
+			Stage newStage = new Stage();
+			newStage.setTitle("Teste Vocacional");
+			newStage.setScene(new Scene(newVBox));
+			newStage.setResizable(false);
+			newStage.initOwner(parentStage);
+ 			newStage.initModality(Modality.WINDOW_MODAL);
+			newStage.show();
+		} catch (IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
 	}
 
 }
