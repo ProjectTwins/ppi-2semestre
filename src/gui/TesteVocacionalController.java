@@ -12,50 +12,49 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.text.Text;
 
 public class TesteVocacionalController implements Initializable {
-	
-	int i = 0;
+
+	int i = 1;
 	int pontos = 0;
-	
+
 	@FXML
 	private Text txtSubtitle;
-	
+
 	@FXML
 	private Text question;
-	
+
 	@FXML
 	private RadioButton q1;
-	
+
 	@FXML
 	private RadioButton q2;
-	
+
 	@FXML
 	private RadioButton q3;
-	
+
 	@FXML
 	private RadioButton q4;
-	
+
 	@FXML
 	private RadioButton q5;
-	
+
 	@FXML
 	private RadioButton q6;
-	
+
 	@FXML
 	private Button proximo;
-	
-	
-	
-	
+
 	@FXML
 	public void onActionBtProximo(ActionEvent e) {
-		if(i == 0) {
+		if (i == 1) {
+			comparar();
+			
 			q1.setSelected(false);
 			q2.setSelected(false);
 			q3.setSelected(false);
 			q4.setSelected(false);
 			q5.setSelected(false);
 			q6.setSelected(false);
-			
+
 			txtSubtitle.setText("Pergunta 1");
 			question.setText("Do que você gosta?");
 			q1.setText("Uso de ferramentas e coisas.");
@@ -64,22 +63,23 @@ public class TesteVocacionalController implements Initializable {
 			q4.setText("Ajudar, Ensinar, tratar, aconselhar, servir aos demais.");
 			q5.setText("Persuadir e dirigir aos demais.");
 			q6.setText("Atingir objetivos claros, disciplina");
-			
-			if(q1.equals(true)) {
-				
+
+			if (q1.equals(true)) {
+
 			}
-			
+
 		}
-		
-		if(i == 2) {
-			
+
+		if (i == 2) {
+			comparar();
+
 			q1.setSelected(false);
 			q2.setSelected(false);
 			q3.setSelected(false);
 			q4.setSelected(false);
 			q5.setSelected(false);
 			q6.setSelected(false);
-			
+
 			txtSubtitle.setText("Pergunta 2");
 			question.setText("Quais são seus valores?");
 			q1.setText("Recompensa fincanceira para realizações mensuraveis.");
@@ -88,19 +88,20 @@ public class TesteVocacionalController implements Initializable {
 			q4.setText("Trabalho para o bem-estar dos demais");
 			q5.setText("Dinheiro e status social.");
 			q6.setText("Dinheiro e ocupações comerciais ou políticas.");
-			
-			if(q1.equals(true)) {
-				
+
+			if (q1.equals(true)) {
+
 			}
-		}else if(i == 3) {  
-			
+		} else if (i == 3) {
+			comparar();
+
 			q1.setSelected(false);
 			q2.setSelected(false);
 			q3.setSelected(false);
 			q4.setSelected(false);
 			q5.setSelected(false);
 			q6.setSelected(false);
-			
+
 			txtSubtitle.setText("Pergunta 3");
 			question.setText("Como você se Vê?");
 			q1.setText("Prático, conservador, mais habilidades mecanicas que sociais.");
@@ -109,17 +110,17 @@ public class TesteVocacionalController implements Initializable {
 			q4.setText("Compreensivo e paciente com sentimentos alheios, mais habilidades sociais que mecanicas.");
 			q5.setText("Lider, condutor. Mais habilidades persuasiva que cientifica.");
 			q6.setText("Disciplinado, coerente.Mais habilidades tecnicas que artisticas.");
-			
-		}
-		else if(i == 4) {
-			
+
+		} else if (i == 4) {
+			comparar();
+
 			q1.setSelected(false);
 			q2.setSelected(false);
 			q3.setSelected(false);
 			q4.setSelected(false);
 			q5.setSelected(false);
 			q6.setSelected(false);
-			
+
 			txtSubtitle.setText("Pergunta 4");
 			question.setText("Como as pessoas veem você?");
 			q1.setText("Normal, Franco.");
@@ -128,9 +129,9 @@ public class TesteVocacionalController implements Initializable {
 			q4.setText("Útil, agradável e bem disposto.");
 			q5.setText("Energético, articulado.");
 			q6.setText("Cuidadoso seguidor de regras.");
-			
-		}
-		else if(i == 5) {
+
+		} else if (i == 5) {
+			comparar();
 			
 			q1.setSelected(false);
 			q2.setSelected(false);
@@ -138,7 +139,7 @@ public class TesteVocacionalController implements Initializable {
 			q4.setSelected(false);
 			q5.setSelected(false);
 			q6.setSelected(false);
-			
+
 			txtSubtitle.setText("Pergunta 5");
 			question.setText("O que você procura evitar?");
 			q1.setText("Interação com outras pessoas.");
@@ -147,21 +148,63 @@ public class TesteVocacionalController implements Initializable {
 			q4.setText("Atividades mecanicas e tecnicas.");
 			q5.setText("Tópicos cientificos ou intelectuais.");
 			q6.setText("Trabalhos sem direção clara.");
-			
-		}else if(i == 6) {
+
+		} else if (i == 6) {
 			Utils.currenteStage(e).close();
 		}
-		
+
 		i = i + 1;
 		System.out.println(i);
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
 
 	}
-	
-	
-	
+
+	public void comparar() {
+		if (q1.isSelected()) {
+			q2.setSelected(false);
+			q3.setSelected(false);
+			q4.setSelected(false);
+			q5.setSelected(false);
+			q6.setSelected(false);
+		}
+		if (q2.isSelected()) {
+			q1.setSelected(false);
+			q3.setSelected(false);
+			q4.setSelected(false);
+			q5.setSelected(false);
+			q6.setSelected(false);
+		}
+		if (q3.isSelected()) {
+			q1.setSelected(false);
+			q2.setSelected(false);
+			q4.setSelected(false);
+			q5.setSelected(false);
+			q6.setSelected(false);
+		}
+		if (q4.isSelected()) {
+			q1.setSelected(false);
+			q2.setSelected(false);
+			q3.setSelected(false);
+			q5.setSelected(false);
+			q6.setSelected(false);
+		}
+		if (q5.isSelected()) {
+			q1.setSelected(false);
+			q2.setSelected(false);
+			q3.setSelected(false);
+			q4.setSelected(false);
+			q6.setSelected(false);
+		}
+		if (q6.isSelected()) {
+			q1.setSelected(false);
+			q2.setSelected(false);
+			q3.setSelected(false);
+			q4.setSelected(false);
+			q5.setSelected(false);
+		}
+	}
+
 }

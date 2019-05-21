@@ -16,12 +16,12 @@
                   <Font name="Lucida Console" size="24.0" />
                </font>
             </Text>
-            <RadioButton fx:id="q1" layoutX="60.0" layoutY="119.0" mnemonicParsing="false" />
-            <RadioButton fx:id="q2" layoutX="60.0" layoutY="153.0" mnemonicParsing="false" />
-            <RadioButton fx:id="q3" layoutX="60.0" layoutY="189.0" mnemonicParsing="false" />
-            <RadioButton fx:id="q4" layoutX="60.0" layoutY="228.0" mnemonicParsing="false" />
-            <RadioButton fx:id="q5" layoutX="60.0" layoutY="269.0" mnemonicParsing="false" />
-            <RadioButton fx:id="q6" layoutX="60.0" layoutY="307.0" mnemonicParsing="false" />
+            <RadioButton fx:id="q1" layoutX="60.0" layoutY="119.0" mnemonicParsing="false" onAction="#comparar" />
+            <RadioButton fx:id="q2" layoutX="60.0" layoutY="153.0" mnemonicParsing="false" onAction="#comparar" />
+            <RadioButton fx:id="q3" layoutX="60.0" layoutY="189.0" mnemonicParsing="false" onAction="#comparar" />
+            <RadioButton fx:id="q4" layoutX="60.0" layoutY="228.0" mnemonicParsing="false" onAction="#comparar" />
+            <RadioButton fx:id="q5" layoutX="60.0" layoutY="269.0" mnemonicParsing="false" onAction="#comparar" />
+            <RadioButton fx:id="q6" layoutX="60.0" layoutY="307.0" mnemonicParsing="false" onAction="#comparar" />
             <Button fx:id="proximo" layoutX="386.0" layoutY="364.0" mnemonicParsing="false" onAction="#onActionBtProximo" text="Proximo" />
             <Text fx:id="txtSubtitle" layoutX="200.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
