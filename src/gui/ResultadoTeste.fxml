@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="343.0" prefWidth="394.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gui.TesteVocacionalController">
+   <children>
+      <Pane prefHeight="343.0" prefWidth="394.0">
+         <children>
+            <Label fx:id="resultado" layoutX="55.0" layoutY="83.0" prefHeight="223.0" prefWidth="285.0" />
+         </children>
+      </Pane>
+      <Label layoutX="61.0" layoutY="32.0" text="Resultado do Teste Vocacional">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

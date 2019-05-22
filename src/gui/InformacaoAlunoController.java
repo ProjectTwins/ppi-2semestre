@@ -21,6 +21,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -84,8 +85,8 @@ public class InformacaoAlunoController implements Initializable {
 	}
 	public void btTeste(ActionEvent event) {
 		Stage parentStage = Utils.currenteStage(event);
-		TesteVocacional("/gui/TesteVocacional.fxml", parentStage);
-		
+		IniciarTesteVocacional("/gui/IniciarTeste.fxml", parentStage);
+		TesteVocacionalController tv = new TesteVocacionalController();
 		
 	}
 
@@ -119,14 +120,14 @@ public class InformacaoAlunoController implements Initializable {
 		txtArea.setText("Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente\r\n" + 
 				"se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria.");
 	}
-	private void TesteVocacional(String absName, Stage parentStage) {
+	private void IniciarTesteVocacional(String absName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absName));
-			VBox newVBox = loader.load();
+			AnchorPane anchorPane = loader.load();
 
 			Stage newStage = new Stage();
-			newStage.setTitle("Teste Vocacional");
-			newStage.setScene(new Scene(newVBox));
+			newStage.setTitle("Iniciar Teste Vocacional");
+			newStage.setScene(new Scene(anchorPane));
 			newStage.setResizable(false);
 			newStage.initOwner(parentStage);
  			newStage.initModality(Modality.WINDOW_MODAL);
