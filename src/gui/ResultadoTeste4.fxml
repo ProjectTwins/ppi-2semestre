@@ -10,7 +10,7 @@
    <children>
       <Pane layoutX="1.0" layoutY="14.0" prefHeight="343.0" prefWidth="394.0">
          <children>
-            <TextArea fx:id="resultado" editable="false" layoutX="10.0" layoutY="67.0" prefHeight="266.0" prefWidth="376.0" text="Realista:  pouco sociável e carece de habilidade&#10;interpessoal. Aversão a situações ambíguas e &#10;carregadas de subjetividade. Sente-se pouco à &#10;vontade em situações sociais ou de conteúdo &#10;emocional, sendo mais reservado, inflexível e &#10;conformista. Possíveis áreas de atuação: &#10;engenharia, mecânica, agronomia;">
+            <TextArea fx:id="resultado" editable="false" layoutX="10.0" layoutY="67.0" prefHeight="266.0" prefWidth="376.0" text="Social: se interessa  pelos vínculos humanos e &#10;manifesta sensibilidade e responsabilidade na busca &#10;de auxiliar,  orientar, tratar e resolver as dificuldades&#10; dos outros. Gosta de se sentir aceito e respeitado&#10; em suas atividades, ter a atenção para si através de&#10; seu jeito expansivo. Possíveis áreas de atuação: &#10;enfermaria, trabalho social, professor;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></TextArea>

@@ -11,13 +11,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,7 +26,7 @@ public class TesteVocacionalController implements Initializable {
 	int pontos = 0;
 
 	@FXML
-	private Label resultado;
+	private TextArea resultado;
 
 	@FXML
 	private Text txtSubtitle;
@@ -239,18 +237,29 @@ public class TesteVocacionalController implements Initializable {
 			if ((this.pontos <= 5)) {
 				Stage parentStage = Utils.currenteStage(e);
 				ResultadoTesteVocacional("/gui/ResultadoTeste.fxml", parentStage);
-
-			} else if ((this.pontos > 5) && (this.pontos <= 9)) {
 				
-				resultado.setText("Teste");
+				
 
-			} else if ((this.pontos > 9) && (this.pontos <= 15)) {
+			} else if ((this.pontos > 5) && (this.pontos <= 10)) {
+				Stage parentStage = Utils.currenteStage(e);
+				ResultadoTesteVocacional("/gui/ResultadoTeste2.fxml", parentStage);
+				
+
+			} else if ((this.pontos > 10) && (this.pontos <= 15)) {
+				Stage parentStage = Utils.currenteStage(e);
+				ResultadoTesteVocacional("/gui/ResultadoTeste3.fxml", parentStage);
 
 			} else if ((this.pontos > 15) && (this.pontos <= 20)) {
+				Stage parentStage = Utils.currenteStage(e);
+				ResultadoTesteVocacional("/gui/ResultadoTeste4.fxml", parentStage);
 
 			} else if ((this.pontos > 20) && (this.pontos <= 25)) {
+				Stage parentStage = Utils.currenteStage(e);
+				ResultadoTesteVocacional("/gui/ResultadoTeste5.fxml", parentStage);
 
 			} else if ((this.pontos > 25) && (this.pontos <= 30)) {
+				Stage parentStage = Utils.currenteStage(e);
+				ResultadoTesteVocacional("/gui/ResultadoTeste6.fxml", parentStage);
 
 			}
 
@@ -260,8 +269,8 @@ public class TesteVocacionalController implements Initializable {
 	}
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-
+	public void initialize(URL url, ResourceBundle res) {
+		
 	}
 
 	public void comparar() {
@@ -327,9 +336,6 @@ public class TesteVocacionalController implements Initializable {
 
 	}
 
-	public void EscreverTexto(String txt) {
-		resultado.setText(txt);
-		
-	}
 
+	
 }
