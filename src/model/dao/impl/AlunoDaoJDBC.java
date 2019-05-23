@@ -252,7 +252,7 @@ public class AlunoDaoJDBC implements AlunoDAO {
 		ResultSet rs = null;
 		
 		try {
-			st = conn.prepareStatement("select * from tb_Materias where ra = ?" );
+			st = conn.prepareStatement("select * from tb_materias where ra = ?" );
 			
 			st.setInt(1, ra);
 			

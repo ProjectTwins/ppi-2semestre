@@ -116,10 +116,7 @@ public class InformacaoAlunoController implements Initializable {
 		return FXCollections.observableArrayList(list);
 
 	}
-	private void textArea() {
-		txtArea.setText("Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente\r\n" + 
-				"se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria.");
-	}
+	
 	private void IniciarTesteVocacional(String absName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absName));

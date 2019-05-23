@@ -7,7 +7,7 @@
 <?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistroAlunoController">
+<VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.RegistroAlunoController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
