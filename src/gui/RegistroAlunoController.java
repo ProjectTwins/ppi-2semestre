@@ -23,6 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.AlunoDAO;
@@ -55,6 +56,9 @@ public class RegistroAlunoController implements Initializable,DataChangeListener
 	private Button btAtualizar;
 	
 	@FXML
+	private Button btLogOut;
+	
+	@FXML
 	private Button btNotas;
 	
 	@FXML
@@ -83,6 +87,16 @@ public class RegistroAlunoController implements Initializable,DataChangeListener
 	private void onBtDeletar(ActionEvent event) {
 		Stage parentStage = Utils.currenteStage(event);
 		JanelaDelete("/gui/DeletarAluno.fxml", parentStage);
+	}
+	
+	@FXML
+	private void onActionBtLogOut(ActionEvent event){
+		Stage parentStage = Utils.currenteStage(event);
+		parentStage.close();
+		
+		Stage parentStage1 = Utils.currenteStage(event);
+		JanelaLogon("/gui/LogonView.fxml", parentStage1);
+		
 	}
 
 	public void initialize(URL url, ResourceBundle rb) {
@@ -115,6 +129,27 @@ public class RegistroAlunoController implements Initializable,DataChangeListener
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Remova um aluno");
 			dialogStage.setScene(new Scene(pane));
+			dialogStage.setResizable(false);
+			dialogStage.initOwner(parentStage);
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.showAndWait();
+		}
+		catch(IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
+	}
+	
+	private void JanelaLogon(String absoluteName,Stage parentStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+			AnchorPane anchorP = loader.load();
+			LogonViewController controller = loader.getController();
+			
+			
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Guiding Students");
+			dialogStage.setScene(new Scene(anchorP));
 			dialogStage.setResizable(false);
 			dialogStage.initOwner(parentStage);
 			dialogStage.initModality(Modality.WINDOW_MODAL);

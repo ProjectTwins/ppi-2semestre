@@ -10,34 +10,34 @@
 
 <VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TesteVocacionalController">
    <children>
-      <Pane prefHeight="411.0" prefWidth="547.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);">
+      <Pane prefHeight="411.0" prefWidth="547.0" style="-fx-background-image: url(/background1/fundo_login8.jpg);">
          <children>
-            <Text layoutX="144.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TESTE VOCACIONAL">
+            <Text fill="#4d00ff" layoutX="144.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TESTE VOCACIONAL">
                <font>
-                  <Font name="Lucida Console" size="24.0" />
+                  <Font name="Lato Black" size="24.0" />
                </font>
             </Text>
-            <RadioButton fx:id="q1" layoutX="60.0" layoutY="119.0" mnemonicParsing="false" onAction="#comparar" text="Uso de ferramentas e coisas.">
+            <RadioButton fx:id="q1" layoutX="60.0" layoutY="119.0" mnemonicParsing="false" onAction="#comparar" text="Uso de ferramentas e coisas." textFill="#1e00ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="q2" layoutX="60.0" layoutY="153.0" mnemonicParsing="false" onAction="#comparar" text="Explorar e entender coisas e eventos.">
+            <RadioButton fx:id="q2" layoutX="60.0" layoutY="153.0" mnemonicParsing="false" onAction="#comparar" text="Explorar e entender coisas e eventos." textFill="#3700ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="q3" layoutX="60.0" layoutY="189.0" mnemonicParsing="false" onAction="#comparar" text="Ler livros, atividades artisticas, musicais e escritas.">
+            <RadioButton fx:id="q3" layoutX="60.0" layoutY="189.0" mnemonicParsing="false" onAction="#comparar" text="Ler livros, atividades artisticas, musicais e escritas." textFill="#5500ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="q4" layoutX="60.0" layoutY="228.0" mnemonicParsing="false" onAction="#comparar" text="Ajudar, Ensinar, tratar, aconselhar, servir aos demais.">
+            <RadioButton fx:id="q4" layoutX="60.0" layoutY="228.0" mnemonicParsing="false" onAction="#comparar" text="Ajudar, Ensinar, tratar, aconselhar, servir aos demais." textFill="#3c00ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="q5" layoutX="60.0" layoutY="269.0" mnemonicParsing="false" onAction="#comparar" text="Persuadir e dirigir aos demais.">
+            <RadioButton fx:id="q5" layoutX="60.0" layoutY="269.0" mnemonicParsing="false" onAction="#comparar" text="Persuadir e dirigir aos demais." textFill="#3c00ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="q6" layoutX="60.0" layoutY="307.0" mnemonicParsing="false" onAction="#comparar" text="Atingir objetivos claros, disciplina.">
+            <RadioButton fx:id="q6" layoutX="60.0" layoutY="307.0" mnemonicParsing="false" onAction="#comparar" text="Atingir objetivos claros, disciplina." textFill="#1500ff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
@@ -45,12 +45,15 @@
                <effect>
                   <SepiaTone />
                </effect></Button>
-            <Text fx:id="txtSubtitle" layoutX="200.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta 1">
+            <Text fx:id="txtSubtitle" fill="#3c00ff" layoutX="200.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pergunta 1">
                <font>
-                  <Font name="Lucida Console" size="13.0" />
+                  <Font name="Arial Bold" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="question" layoutX="187.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do que você gosta?" />
+            <Text fx:id="question" fill="#2f00ff" layoutX="187.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do que você gosta?">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font></Text>
          </children>
       </Pane>
    </children>

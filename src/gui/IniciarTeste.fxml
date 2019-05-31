@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="390.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.IniciarTesteController">
+<AnchorPane prefHeight="310.0" prefWidth="390.0" style="-fx-background-image: url(/background1/fundo_login8.jpg);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.IniciarTesteController">
    <children>
       <Pane layoutX="-90.0" layoutY="-158.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label layoutX="70.0" layoutY="32.0" text="Inicio Teste Vocacional">
+      <Label layoutX="110.0" layoutY="30.0" text="Inicio Teste Vocacional">
          <font>
-            <Font name="Lucida Console" size="18.0" />
+            <Font name="Lato Black" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="30.0" layoutY="130.0" text="Você deseja iniciar o teste Vocacional?">
+      <Label layoutX="73.0" layoutY="136.0" text="Você deseja iniciar o teste Vocacional?">
          <font>
-            <Font name="Lucida Console" size="14.0" />
+            <Font name="Lato Black" size="14.0" />
          </font>
       </Label>
       <Button fx:id="sim" layoutX="92.0" layoutY="246.0" mnemonicParsing="false" onAction="#onActionBtSim" prefHeight="32.0" prefWidth="66.0" text="Sim">

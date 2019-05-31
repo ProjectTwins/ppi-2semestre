@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -21,9 +22,18 @@
                   <SepiaTone />
                </effect>
             </Button>
+            <HBox prefHeight="0.0" prefWidth="530.0" />
+            <Button fx:id="btLogOut" mnemonicParsing="false" onAction="#onActionBtLogOut" text="Log Out">
+               <font>
+                  <Font name="Lucida Console" size="12.0" />
+               </font>
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Button>
         </items>
       </ToolBar>
-      <TableView fx:id="tableView" prefHeight="77.0" prefWidth="800.0">
+      <TableView fx:id="tableView" prefHeight="171.0" prefWidth="800.0">
         <columns>
           <TableColumn fx:id="ra" prefWidth="53.0" text="ra" />
           <TableColumn fx:id="portugues" prefWidth="65.0" text="portugues" />
@@ -40,6 +50,6 @@
             <TableColumn fx:id="artes" prefWidth="60.0" text="artes" />
         </columns>
       </TableView>
-      <TextArea fx:id="txtArea" editable="false" prefHeight="48.0" prefWidth="800.0" text="Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente&#10;se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria." />
+      <TextArea fx:id="txtArea" editable="false" prefHeight="45.0" prefWidth="800.0" text="Aqui você pode consultar as suas notas e responder a um teste vocacional caso tenha interesse em saber em qual cursos você possivelmente&#10;se encaixaria, caso haja duvidas ou encontre problemas, favor informar na secretaria." />
    </children>
 </VBox>

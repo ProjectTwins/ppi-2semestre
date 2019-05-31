@@ -10,7 +10,7 @@
 
 <VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DeletarAlunoController">
    <children>
-      <Pane prefHeight="152.0" prefWidth="311.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);">
+      <Pane prefHeight="152.0" prefWidth="311.0" style="-fx-background-image: url(/background1/fundo_login7.jpg);">
          <children>
             <Button fx:id="btSalvar" layoutX="81.0" layoutY="101.0" mnemonicParsing="false" onAction="#onBtSalvar" text="Salvar">
                <font>
@@ -31,12 +31,12 @@
             <TextField fx:id="txtRa" layoutX="81.0" layoutY="64.0" promptText="RA" />
             <Text fill="RED" layoutX="65.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atenção insira o 'RA' do aluno !">
                <font>
-                  <Font name="Arial Bold" size="12.0" />
+                  <Font name="Lato Black Italic" size="14.0" />
                </font>
             </Text>
             <Text layoutX="60.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RA">
                <font>
-                  <Font name="Lucida Console" size="12.0" />
+                  <Font name="Lato Black" size="12.0" />
                </font>
             </Text>
          </children>

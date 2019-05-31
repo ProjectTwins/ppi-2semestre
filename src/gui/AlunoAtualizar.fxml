@@ -10,15 +10,21 @@
 
 <VBox prefHeight="229.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AlunoAtualizar">
    <children>
-      <Pane prefHeight="226.0" prefWidth="444.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);">
+      <Pane prefHeight="226.0" prefWidth="444.0" style="-fx-background-image: url(/background1/fundo_login7.jpg);">
          <children>
-            <Text layoutX="99.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
-            <Text layoutX="100.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma" />
+            <Text layoutX="99.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="100.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turma">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
             <TextField fx:id="txtNome" layoutX="135.0" layoutY="38.0" promptText="Nome" />
             <TextField fx:id="txtTurma" layoutX="135.0" layoutY="73.0" promptText="Turma" />
             <Text fill="#ff0202" layoutX="22.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entre com RA do aluno que deseja atualizar ">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Lato Black Italic" size="13.0" />
                </font>
             </Text>
             <TextField fx:id="txtRa" layoutX="294.0" layoutY="119.0" prefHeight="25.0" prefWidth="98.0" promptText="RA" />

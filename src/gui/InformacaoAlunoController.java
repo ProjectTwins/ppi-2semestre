@@ -38,6 +38,9 @@ public class InformacaoAlunoController implements Initializable {
 
 	@FXML
 	private Button btTeste;
+	
+	@FXML
+	private Button btLogOut;
 
 	@FXML
 	private TableColumn<Materias, Integer> ra;
@@ -130,6 +133,37 @@ public class InformacaoAlunoController implements Initializable {
  			newStage.initModality(Modality.WINDOW_MODAL);
 			newStage.show();
 		} catch (IOException e) {
+			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
+		}
+	}
+	
+	@FXML
+	private void onActionBtLogOut(ActionEvent event){
+		Stage parentStage = Utils.currenteStage(event);
+		parentStage.close();
+		
+		Stage parentStage1 = Utils.currenteStage(event);
+		JanelaLogon("/gui/LogonView.fxml", parentStage1);
+		
+	}
+	
+	private void JanelaLogon(String absoluteName,Stage parentStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+			AnchorPane anchorP = loader.load();
+			LogonViewController controller = loader.getController();
+			
+			
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Guiding Students");
+			dialogStage.setScene(new Scene(anchorP));
+			dialogStage.setResizable(false);
+			dialogStage.initOwner(parentStage);
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.showAndWait();
+		}
+		catch(IOException e) {
 			Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
 	}

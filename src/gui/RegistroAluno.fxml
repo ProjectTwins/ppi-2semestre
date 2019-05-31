@@ -5,9 +5,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.RegistroAlunoController">
+<VBox prefHeight="277.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistroAlunoController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
@@ -27,6 +29,15 @@
                <effect>
                   <SepiaTone />
                </effect></Button>
+            <HBox prefHeight="22.0" prefWidth="200.0" />
+            <Button fx:id="btLogOut" mnemonicParsing="false" onAction="#onActionBtLogOut" text="Log Out">
+               <effect>
+                  <SepiaTone />
+               </effect>
+               <font>
+                  <Font name="Lucida Console" size="12.0" />
+               </font>
+            </Button>
         </items>
       </ToolBar>
       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image:url(/background1/fundo_login3.jpg);">

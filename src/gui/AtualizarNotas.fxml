@@ -10,25 +10,61 @@
 
 <VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AtualizarNotaController">
    <children>
-      <Pane prefHeight="325.0" prefWidth="389.0" style="-fx-background-image: url(/background1/fundo_login4.jpg);">
+      <Pane prefHeight="325.0" prefWidth="389.0" style="-fx-background-image: url(/background1/fundo_login7.jpg);">
          <children>
-            <Text layoutX="93.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atualize a nota pelo RA">
+            <Text layoutX="117.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atualize a nota pelo RA">
                <font>
-                  <Font name="Lucida Console" size="14.0" />
+                  <Font name="Lato Black" size="14.0" />
                </font>
             </Text>
-            <Text layoutX="36.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portugues" />
-            <Text layoutX="32.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matematica" />
-            <Text layoutX="42.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biologia" />
-            <Text layoutX="49.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fisica" />
-            <Text layoutX="41.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quimica" />
-            <Text layoutX="41.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filosofia" />
-            <Text layoutX="204.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artes" />
-            <Text layoutX="196.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ed Fisica" />
-            <Text layoutX="202.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingles" />
-            <Text layoutX="192.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Geografia" />
-            <Text layoutX="198.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historia" />
-            <Text layoutX="191.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sociologia" />
+            <Text layoutX="36.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portugues">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="32.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matematica">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="42.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biologia">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="49.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fisica">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="41.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quimica">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="41.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filosofia">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="204.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artes">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="196.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ed Fisica">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="202.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingles">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="192.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Geografia">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="198.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historia">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
+            <Text layoutX="191.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sociologia">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
             <TextField fx:id="portugues" layoutX="101.0" layoutY="51.0" prefHeight="25.0" prefWidth="62.0" promptText="Português" />
             <TextField fx:id="matematica" layoutX="101.0" layoutY="84.0" prefHeight="25.0" prefWidth="62.0" promptText="Matemática" />
             <TextField fx:id="biologia" layoutX="101.0" layoutY="118.0" prefHeight="25.0" prefWidth="62.0" promptText="Biologia" />
@@ -41,7 +77,10 @@
             <TextField fx:id="sociologia" layoutX="256.0" layoutY="151.0" prefHeight="25.0" prefWidth="62.0" promptText="Sociologia" />
             <TextField fx:id="edFisica" layoutX="256.0" layoutY="179.0" prefHeight="25.0" prefWidth="62.0" promptText="Ed. Fisica" />
             <TextField fx:id="artes" layoutX="256.0" layoutY="211.0" prefHeight="25.0" prefWidth="62.0" promptText="Artes" />
-            <Text layoutX="139.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RA" />
+            <Text layoutX="139.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RA">
+               <font>
+                  <Font name="Lato Black" size="12.0" />
+               </font></Text>
             <TextField fx:id="ra" layoutX="164.0" layoutY="250.0" prefHeight="25.0" prefWidth="62.0" promptText="RA" />
             <Button fx:id="btSalvar" layoutX="122.0" layoutY="286.0" mnemonicParsing="false" onAction="#onBtSalvar" text="Salvar">
                <effect>
