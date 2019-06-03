@@ -18,6 +18,5 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/javafx"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc"/>
-	<classpathentry kind="lib" path="C:/java-libs/fat-jar/fatjar.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

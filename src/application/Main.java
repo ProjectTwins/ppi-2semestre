@@ -20,7 +20,7 @@ public class Main extends Application {
 			Parent parent = loader.load();
 			Scene mainScene = new Scene(parent);
 			primaryStage.setScene(mainScene);
-			primaryStage.setTitle("Project Twins");
+			primaryStage.setTitle("PRJ Engenharia de Software");
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
